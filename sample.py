@@ -1,6 +1,13 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 
+load_dotenv()
+
+
+client = OpenAI(
+  base_url="https://openrouter.ai/api/v1",
+  api_key="<OPENROUTER_API_KEY>",
+)
 # First API call with reasoning
 response = client.chat.completions.create(
   model="alibaba/tongyi-deepresearch-30b-a3b:free",
@@ -36,4 +43,4 @@ response2 = client.chat.completions.create(
 )
 
 #print("First response:", response.content)
-#print("Second response:", response2.choices[0].message.con tent)
+#print("Second response:", response2.choices[0].message.content)
